@@ -1,0 +1,22 @@
+This is still very much a beta version, so the instructions are relatively simple:
+
+Always full-click on a tile face. Java is not the most spectacular mouse event handler, so
+if you do a quick click, it might actually not register. Also, mouse handling is not defined
+outside them, and can have unpredictable results. To order your tiles, middle click on any
+one of your concealed tiles.
+
+
+- To play a tile from your hand, left-click that tile, or navigate to the tile with your left/right cursor keys, then hit "space"
+
+- To claim a tile form someone else, left-click on their discarded tile, or just hit "enter" on your keyboard.
+
+- To pass over someone's discard, right-click on their discarded tile, or press "space".
+  (This can considerable speed up the game!)
+
+- If you picked your own winning tile, click the "declare win" button on the left.
+  This will pop up a "do you want to claim a self-draw win" dialog.
+
+
+If there is a crash, or an exception, or something that shouldn't happen or even just seems
+a bit strange, please contact me at pomax@nihongoresources.com or directly on IM or IRC
+if you know how to contact me there.

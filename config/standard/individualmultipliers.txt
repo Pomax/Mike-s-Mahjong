@@ -1,0 +1,58 @@
+################################################################
+#
+# multipliers for pungs of dragons, wind of the round, and own wind
+#
+#
+
+[dfsa]
+	name=dragon and own wind multipliers
+	[node]
+		name=start
+		[path]
+			conditional=pung dragon
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+		[path]
+			conditional=pung ownwind
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+		[path]
+			conditional=kong dragon
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+		[path]
+			conditional=kong ownwind
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+	[/node]
+[/dfsa]
+
+
+# we need this second separate multiplier dFSA because the finite state automaton system can only check one condition at a time,
+# not two, so when a pung of own winds is also a pung of the wind of the round, for instance, we would "miss out" on a multiplier.
+[dfsa]
+	name=round wind multipliers
+	[node]
+		name=start
+		[path]
+			conditional=pung roundwind
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+		[path]
+			conditional=kong roundwind
+			value=1
+			concealedvalue=1
+			lnode=start
+		[/path]
+	[/node]
+[/dfsa]

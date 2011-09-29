@@ -1,0 +1,373 @@
+##################################################################
+#
+# one suit and honours - self explanatory name
+#
+#
+
+[dfsa]
+	name=one suit and honours
+	value=1
+	[node]
+		name=start
+		[path]
+			conditional=any numeral bamboo
+			lnode=bamboo
+		[/path]
+		[path]
+			conditional=any numeral characters
+			lnode=character
+		[/path]
+		[path]
+			conditional=any numeral dots
+			lnode=dot
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=honour
+		[/path]
+	[/node]
+	[node]
+		name=bamboo
+		[path]
+			conditional=any numeral bamboo
+			lnode=bamboo
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=bambooh
+		[/path]
+	[/node]
+	[node]
+		name=character
+		[path]
+			conditional=any numeral characters
+			lnode=character
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=characterh
+		[/path]
+	[/node]
+	[node]
+		name=dot
+		[path]
+			conditional=any numeral dots
+			lnode=dot
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=doth
+		[/path]
+	[/node]
+	[node]
+		name=honour
+		[path]
+			conditional=any honour
+			lnode=honour
+		[/path]		
+		[path]
+			conditional=any numeral bamboo
+			lnode=bambooh
+		[/path]
+		[path]
+			conditional=any numeral characters
+			lnode=characterh
+		[/path]
+		[path]
+			conditional=any numeral dots
+			lnode=doth
+		[/path]
+	[/node]
+	[node]
+		name=bambooh
+		[path]
+			conditional=any numeral bamboo
+			lnode=bambooh
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=bambooh
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=bambooh
+		[/path]
+		[path]
+			conditional=single season
+			lnode=bambooh
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+	[node]
+		name=characterh
+		[path]
+			conditional=any numeral characters
+			lnode=characterh
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=characterh
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=characterh
+		[/path]
+		[path]
+			conditional=single season
+			lnode=characterh
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+	[node]
+		name=doth
+		[path]
+			conditional=any numeral dots
+			lnode=doth
+		[/path]
+		[path]
+			conditional=any honour
+			lnode=doth
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=doth
+		[/path]
+		[path]
+			conditional=single season
+			lnode=doth
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+
+#######################################################################
+#
+# fully concealed - accepts only hands of which all tiles are concealed, including the last
+#
+#
+
+[dfsa]
+	name=fully concealed hand
+	value=3
+	[node]
+		name=start
+		[path]
+			conditional=concealed
+			lnode=start
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=start
+		[/path]
+		[path]
+			conditional=single season
+			lnode=start
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+##################################################################
+#
+# clean hand - accepts only hands composed of either bamboo, character or dots
+#
+#
+
+[dfsa]
+	name=clean hand
+	value=3
+	[node]
+		name=start
+		[path]
+			conditional=any numeral bamboo
+			lnode=2
+		[/path]
+		[path]
+			conditional=any numeral characters
+			lnode=3
+		[/path]
+		[path]
+			conditional=any numeral dots
+			lnode=4
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=start
+		[/path]
+		[path]
+			conditional=single season
+			lnode=start
+		[/path]
+	[/node]
+	[node]
+		name=2
+		[path]
+			conditional=any numeral bamboo
+			lnode=2
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=2
+		[/path]
+		[path]
+			conditional=single season
+			lnode=2
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+	[node]
+		name=3
+		[path]
+			conditional=any numeral characters
+			lnode=3
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=3
+		[/path]
+		[path]
+			conditional=single season
+			lnode=3
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+	[node]
+		name=4
+		[path]
+			conditional=any numeral dots
+			lnode=4
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=4
+		[/path]
+		[path]
+			conditional=single season
+			lnode=4
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+################################################################
+#
+# no-point hand - accepts only hands composed of chows and a non-scoring pair
+#
+#
+
+[dfsa]
+	name=no-point hand
+	value=1
+	[node]
+		name=start
+		[path]
+			conditional=chow
+			lnode=start
+		[/path]
+		[path]
+			conditional=pair numeral
+			lnode=2
+		[/path]
+		[path]
+			conditional=pair wind
+			lnode=2
+		[/path]
+	[/node]
+	[node]
+		name=2
+		[path]
+			conditional=chow
+			lnode=2
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=2
+		[/path]
+		[path]
+			conditional=single season
+			lnode=2
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+################################################################
+#
+# pung hand - accepts only hands composed of pung/kongs and a pair
+#
+#
+
+[dfsa]
+	name=pung hand
+	value=1
+	[node]
+		name=start
+		[path]
+			conditional=pung
+			lnode=start
+		[/path]
+		[path]
+			conditional=kong
+			lnode=start
+		[/path]
+		[path]
+			conditional=pair
+			lnode=2
+		[/path]
+	[/node]
+	[node]
+		name=2
+		[path]
+			conditional=pung
+			lnode=2
+		[/path]
+		[path]
+			conditional=kong
+			lnode=2
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=2
+		[/path]
+		[path]
+			conditional=single season
+			lnode=2
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+

@@ -1,0 +1,48 @@
+################################################################
+#
+# standard win pattern - accepts all hands consisting of 1 pair and 4 sets
+#
+#
+
+[dfsa]
+	name=standard win pattern
+	value=10
+	[tilepattern]
+		[pair]
+			generic=1
+		[/pair]
+		[set]
+			generic=4
+		[/set]
+	[/tilepattern]	
+	[node]
+		name=start
+		[path]
+			conditional=set
+			lnode=start
+		[/path]
+		[path]
+			conditional=pair
+			lnode=2
+		[/path]
+	[/node]
+	[node]
+		name=2
+		[path]
+			conditional=set
+			lnode=2
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=2
+		[/path]
+		[path]
+			conditional=single season
+			lnode=2
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]

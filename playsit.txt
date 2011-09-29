@@ -1,0 +1,200 @@
+*** Situation after turn 7 ***
+Human player 'Player 1':
+[concealed]
+
+Bamboo Four (3)
+Bamboo Eight (7)
+Bamboo Eight (7)
+Bamboo Nine (8)
+Characters One (9)
+Characters Three (11)
+Characters Five (13)
+Characters Seven (15)
+Characters Nine (17)
+Characters Nine (17)
+Dots Five (22)
+Red Dragon (31)
+White Dragon (33)
+[open]
+[bonus]
+
+Season 3 (Fall) (40)
+
+AI player 'Player 2':
+[concealed]
+
+Bamboo Three (2)
+Bamboo Five (4)
+Characters Two (10)
+Characters Four (12)
+Dots One (18)
+Dots Two (19)
+Dots Three (20)
+Dots Five (22)
+Dots Five (22)
+Red Dragon (31)
+Green Dragon (32)
+White Dragon (33)
+White Dragon (33)
+[open]
+[bonus]
+
+
+AI player 'Player 3':
+[concealed]
+
+Bamboo One (0)
+Bamboo One (0)
+Bamboo Two (1)
+Bamboo Five (4)
+Bamboo Six (5)
+Bamboo Six (5)
+Bamboo Seven (6)
+Characters Three (11)
+Characters Four (12)
+Dots One (18)
+Dots Two (19)
+Dots Seven (24)
+Dots Nine (26)
+[open]
+[bonus]
+
+
+AI player 'Player 4':
+[concealed]
+
+Bamboo Eight (7)
+Characters One (9)
+Characters Two (10)
+Characters Five (13)
+Dots Three (20)
+Dots Five (22)
+Dots Six (23)
+Dots Six (23)
+Dots Seven (24)
+Dots Eight (25)
+Dots Nine (26)
+South (28)
+North (30)
+[open]
+[bonus]
+
+Flower 1 (Plum) (34)
+Flower 4 (Bamboo) (37)
+Flower 2 (Orchid) (35)
+Flower 3 (Chrysanthemum) (36)
+Season 2 (Summer) (39)
+
+PlayTurnNotice 8,27,0,0,0,1
+processPlayTurnNotice: PlayTurnNotice 8,27,0,0,0,1
+There are 124 tiles left in the wall this turn.
+turn 8, windoffset 0, currentplayer id 0
+Player 'Player 1' received a Characters Three (11).
+discards size for Single: 34 tiles
+Underlying AI would discard Bamboo Four
+setHumanDiscard to 33
+discarding 33 from [3, 7, 7, 8, 9, 11, 11, 13, 15, 17, 17, 22, 31, 33]
+Player 'Player 1' discarded a White Dragon (33).
+waiting for all bids to return, within 3000ms
+All bids are in.
+Highest bid seen for this discard: -1
+*** Situation after turn 8 ***
+Human player 'Player 1':
+[concealed]
+
+Bamboo Four (3)
+Bamboo Eight (7)
+Bamboo Eight (7)
+Bamboo Nine (8)
+Characters One (9)
+Characters Three (11)
+Characters Three (11)
+Characters Five (13)
+Characters Seven (15)
+Characters Nine (17)
+Characters Nine (17)
+Dots Five (22)
+Red Dragon (31)
+[open]
+[bonus]
+
+Season 3 (Fall) (40)
+
+AI player 'Player 2':
+[concealed]
+
+Bamboo Three (2)
+Bamboo Five (4)
+Characters Two (10)
+Characters Four (12)
+Dots One (18)
+Dots Two (19)
+Dots Three (20)
+Dots Five (22)
+Dots Five (22)
+Red Dragon (31)
+Green Dragon (32)
+White Dragon (33)
+White Dragon (33)
+[open]
+[bonus]
+
+
+AI player 'Player 3':
+[concealed]
+
+Bamboo One (0)
+Bamboo One (0)
+Bamboo Two (1)
+Bamboo Five (4)
+Bamboo Six (5)
+Bamboo Six (5)
+Bamboo Seven (6)
+Characters Three (11)
+Characters Four (12)
+Dots One (18)
+Dots Two (19)
+Dots Seven (24)
+Dots Nine (26)
+[open]
+[bonus]
+
+
+AI player 'Player 4':
+[concealed]
+
+Bamboo Eight (7)
+Characters One (9)
+Characters Two (10)
+Characters Five (13)
+Dots Three (20)
+Dots Five (22)
+Dots Six (23)
+Dots Six (23)
+Dots Seven (24)
+Dots Eight (25)
+Dots Nine (26)
+South (28)
+North (30)
+[open]
+[bonus]
+
+Flower 1 (Plum) (34)
+Flower 4 (Bamboo) (37)
+Flower 2 (Orchid) (35)
+Flower 3 (Chrysanthemum) (36)
+Season 2 (Summer) (39)
+
+PlayTurnNotice 9,27,0,0,0,1
+processPlayTurnNotice: PlayTurnNotice 9,27,0,0,0,1
+There are 124 tiles left in the wall this turn.
+turn 9, windoffset 0, currentplayer id 1
+Player 'Player 2' received a Characters Six (14).
+discards size for Single: 34 tiles
+Trying to discard 31 from [2, 4, 10, 12, 14, 18, 19, 20, 22, 22, 31, 32, 33, 33]
+discarding 31 from [2, 4, 10, 12, 14, 18, 19, 20, 22, 22, 31, 32, 33, 33]
+Player 'Player 2' discarded a Red Dragon (31).
+waiting for all bids to return, within 3000ms
+All bids are in.
+Highest bid seen for this discard: -1
+*** Situation after turn 9 ***

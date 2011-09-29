@@ -1,0 +1,86 @@
+########################################################################
+#
+# basic tile scoring  -	uses a cumulative counting FSA. Notice that if a subset of
+#				a tileset scores points, the remaining subsets need to be
+#				defined as non-scoring viable paths. See the singles definition
+#
+
+[dfsa]
+	name=basic tile scoring
+	[node]
+		name=start
+		[path]
+			conditional=single flower
+			value=4
+			lnode=start
+		[/path]
+		[path]
+			conditional=single season
+			value=4
+			lnode=start
+		[/path]
+		
+		# regular pairs score nothing - only dragons, wind of the round or own wind
+		# also, we explicitly override the concealed value, because can only score when concealed - if we leave off a concealedvalue entry, concealed is interpreted as twice the normal value
+		[path]
+			conditional=pair ownwind
+			value=0
+			concealedvalue=2
+			lnode=start
+		[/path]
+		[path]
+			conditional=pair roundwind
+			value=0
+			concealedvalue=2
+			lnode=start
+		[/path]
+		[path]
+			conditional=pair dragon
+			value=0
+			concealedvalue=2
+			lnode=start
+		[/path]
+
+		# simple pung scores 2
+		[path]
+			conditional=pung simple
+			value=2
+			lnode=start
+		[/path]
+		
+		# terminal pung scores 4
+		[path]
+			conditional=pung terminal
+			value=4
+			lnode=start
+		[/path]
+		
+		# honour pung scores 4
+		[path]
+			conditional=pung honour
+			value=4
+			lnode=start
+		[/path]
+		
+		# simple kong scores 8
+		[path]
+			conditional=kong simple
+			value=8
+			lnode=start
+		[/path]
+		
+		# terminal kong scores 16
+		[path]
+			conditional=kong terminal
+			value=16
+			lnode=start
+		[/path]
+		
+		# honour kong scores 16
+		[path]
+			conditional=kong honour
+			value=16
+			lnode=start
+		[/path]
+	[/node]
+[/dfsa]

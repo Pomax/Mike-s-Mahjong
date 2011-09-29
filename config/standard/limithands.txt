@@ -1,0 +1,55 @@
+##################################################################
+#
+# only honours - composed only of dragons and winds
+#
+#
+
+[dfsa]
+	name=only honours
+	value=limit
+	[node]
+		name=start
+		[path]
+			conditional=any honour
+			lnode=start
+		[/path]
+		[path]
+			conditional=single flower
+			lnode=start
+		[/path]
+		[path]
+			conditional=single season
+			lnode=start
+		[/path]
+		[path]
+			conditional=empty
+			lnode=accept
+		[/path]
+	[/node]
+[/dfsa]
+
+
+##################################################################
+#
+# thirteen orphens - 1, 9 of each suit, each wind once, each dragone once
+# and any of them to form a pair for the 14 tile winpattern
+#
+# NOT A DFSA AT THE MOMENT
+#
+
+	[tilepattern]
+		[single]
+			generic=12
+			# there are 13 tiles that may be used, but only 12 can be a single.
+			specific=0,8,9,17,18,26,27,28,29,30,31,32,33
+		[/single]
+		[pair]
+			generic=1
+			# there are 13 tiles that may be used, but only 1 pair is allowed
+			specific=0,8,9,17,18,26,27,28,29,30,31,32,33
+		[/pair]
+		#
+		# We probably need to adjust the tilepattern class, extending it with a "must contain the following tiles" definition,
+		# so that checks for, for instance, the 13 orphans can be made easily.
+		#
+	[/tilepattern]

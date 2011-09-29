@@ -1,0 +1,19 @@
+If your Operating System understands how to start a runnable jarfile, just double click.
+
+If it doesn't, run it from a command prompt/terminal using the command:
+	
+	java -jar MJ.jar
+
+There are several runtime parameters that can be passed in the for of an extra "--value":
+
+	--help		Show this help text
+	--nodebug		Does not add the debug text pane to the UI
+	--nohuman		All players are A.I. This means you cannot see any tiles.
+	--autoplay		Human's hand is played by an A.I. player instead.
+	--playopen		Everyone plays with open tiles.
+	--editor		Run the config pattern editor instead of the game
+	
+These values can be combined, so to run the game without a debug window, autoplaying
+with everyone's tiles visible, run:
+
+	java -jar MJ.jar --nodebug --autoplay --playopen

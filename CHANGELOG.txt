@@ -1,0 +1,84 @@
+This is the changelog for the MJsystem Mahjong game and A.I. implementation written by Mike "Pomax" Kamermans, of nihongoresources.com
+
+[SINCE 2010-10-16 VERSION]
+
+- Made newly dealt tiles stand out
+- Fixed focussing issues with the game UI being displayed over the claim dialog, thus making it impossible to claim (notably using focus-follows-mouse setups)
+- Fixed a precision timing bug where you could pop up the claim window just as claiming timed out.
+- Made the game use included fonts, instead of relying on whatever java picks. This was highly unreliable. Included now are:
+	- DejaVu Condensed Sans (http://dejavu-fonts.org/wiki/Main_Page)
+	- Hakushu Gyousho Pro free version (http://www.hakusyu.com/download/kyokan.html)
+
+[SINCE 2010-10-11 VERSION]
+
+- Routed keyboard through the GUI for every keyboard-listening component, so you never lose the ability to play with the keyboard
+- Added in most of the code needed to make the A.I. more intelligent. Right now they're playing as beginning players, playing for "whatever is easiest to get", without taking scoring into account. This will change in the next version.
+
+[SINCE 2010-10-04 VERSION]
+
+- Keyboard play enabled:
+	left/right: highlight a tile in your hand for discarding
+	space: discard highlighted tile, or ignores current discard ("do not want" key)
+	enter: claim current discard ("want" key)
+- Keyboard hotkeys:
+	s: autosort all concealed tiles (including the AI players')
+	ctrl-c: quit program
+- Fixed bug in declaring a melded kong
+- Removed a secondary automatic win signal when determining the best discard. Human now has full control
+- Fixed the wall not drawing itself properly as the game went on
+- Fixed a bug where an AI would be unable to claim certain kongs (instead they would pung, then discard the single left in their hand)
+
+[SINCE 2010-10-03 VERSION]
+
+- Removed an automatic win signal when determining the best discard, which meant a human player won, if their hand matched a win pattern, rather than letting the human player decide whether to win, or play on for a nicer hand.
+- Added an editor view to examine (but not modify or build, at the moment) configuration score patterns
+
+[SINCE 2010-10-02 VERSION]
+
+- Added some player options:
+	autosort - turn on/off tile sorting
+	declare kong - declare a concealed kong, moving it from your hand to the table
+	declare win - declare a self-drawn win
+- Added manual sorting of hand tiles.
+- Added a timeout for clicking a discard. If you click a tile to discard, but change your mind while clicking, just hold it a bit longer and then let go. The game will let you pick a new discard provided you pressed the mouse for longer than half a second.
+- Fixed a game-crashing bug for discards that allowed you to signal "do not want" with a right-click, but then also allowed you to follow up with a claim by left-clicking. Now, right-clicking makes the discard slightly darker, and it won't react to any further clicks.
+
+[SINCE 2010-10-01 VERSION]
+
+- Added a config rule for whether or not the deal moves when East wins. It's set to "false" by default, until the AI is good enough to put up a significant fight and you don't win four times in a row as east =)
+- Fixed connected pair/chow detection when parsing hands like "11 22 33 456 789 EE"; it failed halfway during dermining there were two chows "123", breaking up the second as "connected pair 12 and single 3".
+- Optimised tile pattern parsing a little
+- Finally found the reason discards wouldn't clear sometimes: if the next player drew a supplement tile, the "clear discards" call was never reached. This call has now also been placed at the end of the "supplement received" handling for players, so this bug is now properly fixed.
+- There was a bug in the "which patterns can be formed with these tiles" algorithm that led to tiles being invented out of thin air. I'm fairly sure I fuxed it, but to be certain I added in a dialog that pops up, informing you that a player tried to perform an illegal discard so that instead of crashing, the game will let you know that bug still manifests somehow, then discarding the player last tile. That way you don't lose your game, and I get to know what happened (if you tell me, of course).
+- Added autoplay, so that player 1 is being played by an AI, but with human player visuals, so that all tile are still visible.
+- Added the ultimate cheat flag, so you can everyone play with their tiles open.
+- Removed log4j dependencies that weren't used anyway. Shaved 330KB off the filesize!
+- Removed a tileset that wasn't used, shaving another 200B off the filesize!
+
+[SINCE 2010-09-30 VERSION]
+
+- Corrected incorrect wind rotations and skippings
+- Hopefully fixed discard panel not always cleaning up after "discard can be claimed" interval has passed... it was still being weird
+- Added a 'wind of the round' indicator in the form of a fat dot in front of the wind that's wind of the round
+- Fixed a bug in the discard-after-claim processing
+
+[SINCE 2010-09-28 VERSION]
+
+- Fixed a serious problem with computing what was and what wasn't a valid chow in a hand (it allowed illegal wins, and prevented legal wins!)
+- Fixed the discard panel not always cleaning up after "discard can be claimed" interval has passed
+
+[SINCE 2010-09-26 VERSION]
+
+- Changed the layout management so that the bonus tiles show up normally
+- Turned on autosort, because not having it turned on didn't help beta-test-players =)
+- Corrected a typo in the name for this file!
+- Removed a zero-day bug that would crash the game after a player got 8 bonus tiles, throughout the game.
+- Added a runtime flag to turn off the debug pane in the UI, so it fits on netbooks: java -jar MJ.jar --nodebug
+
+[SINCE 2010-09-15 VERSION]
+
+- Fixed a problem with winning, where you would not be able to indicate what you actually won with, and consequently those tiles never ending up being shown to everyone. This meant that for scoring they counted as more points than they should have.
+
+[PRIOR]
+
+there was no changelog prior
